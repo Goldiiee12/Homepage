@@ -1,0 +1,140 @@
+/* General Styles */
+body, header, section, footer {
+    display: grid;
+    padding: 10px;
+    outline: 1px solid black; /* Outline for visual structure */
+}
+
+body {
+    grid-template-rows: auto 1fr auto; /* Layout for header, content, footer */
+    gap: 20px; /* Space between grid items */
+}
+
+/* Header Styles */
+header {
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: end;
+    gap: 20px;
+    list-style-type: none;
+}
+
+/* Navigation Item Styles */
+nav ul li {
+    outline: 1px solid black; /* Outline for each navigation item */
+}
+
+/* Intro Section Styles */
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+}
+
+#intro h1, #intro h2 {
+    margin: 0;
+    padding: 5px 0;
+}
+
+/* Projects Section Styles */
+#projects {
+    grid-template-columns: 1fr; /* Single column for vertical grid */
+    gap: 20px; /* Space between projects */
+}
+
+.project {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    grid-template-rows: auto auto; /* Two rows */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-areas: 
+        "top top"
+        "bottomLeft bottomRight";
+        outline: 1px solid black; /* Outline for each navigation item */
+}
+
+/* About and Contact Section Styles */
+#about, #contact {
+    justify-content: left;
+    align-items: center;
+}
+
+#about, #contact {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Allocates more space to the content than the image */
+    gap: 20px; /* Adjust gap between columns as needed */
+}
+
+/* Add styles for .about-image if you're adding an image, for example: */
+.about-image, .contact-image {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout, adjust if you're adding more complex structures */
+    gap: 10px; /* Space between items, useful if there are multiple images or elements */
+    padding: 10px; /* Optional: Adds padding within the .about-image container */
+    align-items: center; /* Aligns items vertically in the center, if there's vertical space */
+    justify-items: center; /* Center-aligns the items horizontally */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+    gap: 20px; /* Space between columns */
+}
+
+.skill-category h3 {
+    margin: 0 0 10px 0; /* Adjusts heading margin for consistency */
+}
+
+.skill-category ul {
+    list-style-type: none; /* Removes the default list style */
+    padding: 0; /* Removes the default padding */
+    margin: 0; /* Removes the default margin */
+}
+
+.skill-category li {
+    padding: 2px 0; /* Adds vertical padding for list items */
+}
+
+
+/* Footer Styles */
+footer {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 600px) {
+    header, nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        grid-template-rows: repeat(4, auto);
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "top"
+            "bottomLeft"
+            "bottomRight";
+    }
+
+    #about {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
