@@ -131,7 +131,7 @@ footer {
             "bottomRight";
     }
 
-    #about {
+    #about, #contact {
         grid-template-columns: 1fr;
     }
 
